@@ -1,6 +1,7 @@
 import * as express from 'express';
 import * as bodyParser from "body-parser";
 import {routers} from "./routers";
+import {resolve} from 'path';
 
 const app = express();
 
@@ -11,7 +12,7 @@ app.use("/api", routers);
 
 app.use(express.static('./client/build'));
 app.get('/generator', function (req, res) {
-    res.redirect('/');
+    res.sendFile(resolve('./client/build/index.html'));
 });
 
 
