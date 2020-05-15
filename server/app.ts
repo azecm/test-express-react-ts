@@ -3,6 +3,8 @@ import * as bodyParser from "body-parser";
 import {routers} from "./routers";
 import {resolve} from 'path';
 
+const publicDir = './client/build';
+
 const app = express();
 
 app.use(bodyParser.json());
@@ -10,9 +12,10 @@ app.use(bodyParser.json());
 
 app.use("/api", routers);
 
-app.use(express.static('./client/build'));
+app.use(express.static(publicDir));
+app.use('/angular', express.static('./client-angular/dist/client-angular'));
 app.get('/generator', function (req, res) {
-    res.sendFile(resolve('./client/build/index.html'));
+    res.sendFile(resolve(publicDir + '/index.html'));
 });
 
 

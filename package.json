@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start:server": "nodemon",
-    "build:client": "cd client && npm run build:client"
+    "build:client": "cd client && npm run build:client",
+    "build:angular-client": "cd client-angular && npm run build:angular"
   },
   "author": "",
   "license": "ISC",
