@@ -10,6 +10,7 @@ function App() {
             <ul>
                 <li><Link to="/">Consumer</Link></li>
                 <li><Link to="/generator">Generator</Link></li>
+                <li><a href="/angular/">Consumer (Angular)</a></li>
             </ul>
             <Route exact path="/" component={Consumer}/>
             <Route path="/generator" component={Generator}/>
